@@ -1,27 +1,26 @@
-import Item from './item';
-import { Button, Typography, Stack } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
+import { CirclePicker } from 'react-color';
 
-const products = [
-  { info: '365 Signature Hoodie', img:'./img/product-1.png' },
-  { info: 'Organic Skinny High Waist Jeans', img:'./img/product-2.png' },
-  { info: 'Organic Skinny High Waist Jeans', img:'./img/product-3.png' }
-]
+function ItemDetails(props: any) {
+  const  handleChangeComplete = (color: any, event: any) => {
+    console.log(color, event);
+  };
 
-function ItemDetails() {
   return (
-    <>
-      <Stack direction="column" spacing={2}>
-        <Button href="#text-buttons" sx={{minWidth: '146px', height: '17px', fontFamily: 'Avenir', fontStyle: 'normal', fontWeight: '900', fontSize: '12.8px', lineHeight: '17px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', textTransform: 'capitalize', color: '#000000', flex: 'none', order: '0', flexGrow: '0'}}>Shop all everyday items</Button>
-        <Typography variant="body2" component="span" sx={{width: '146px', height: '1px', background: '#000000', flex: 'none', order: 1, alignSelf: 'stretch', flexGrow: 0}}></Typography>
-      </Stack>
-      <Stack direction="row" spacing={2}>
-        {products.map(product => {
-          return (
-            <Item key={product.img} product={product} />
-          )
-        })}
-      </Stack>
-    </>
+    <Stack direction="column" spacing={2}>
+        <img src={props.product.img} alt={props.product.info} width='230px' height='310px' />
+        <Typography>{props.product.info}</Typography>
+        <Stack direction="row" spacing={2} sx={{justifyContent: 'space-between'}}>
+          <Typography>€33.95</Typography>
+            <CirclePicker 
+              width={'90px'}
+              circleSize={10}
+              circleSpacing={9}
+              colors={['#99C3CC', '#CC9999', '#CB99CC', '#A6CC99']}
+              onChangeComplete={handleChangeComplete}
+              />
+        </Stack>
+    </Stack>
   );
 }
 
