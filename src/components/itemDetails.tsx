@@ -18,7 +18,7 @@ function ItemDetails(props: any) {
               circleSpacing={9}
               colors={['#99C3CC', '#CC9999', '#CB99CC', '#A6CC99']}
               onChangeComplete={handleChangeComplete}
-              />
+            />
         </Stack>
     </Stack>
   );
