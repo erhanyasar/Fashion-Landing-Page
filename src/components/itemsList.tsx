@@ -1,5 +1,7 @@
+
+import { Stack, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import ItemDetails from './itemDetails';
-import { Stack } from '@mui/material';
 import ArrowIcon from './arrowIcon';
 
 const products = [
@@ -9,8 +11,19 @@ const products = [
 ]
 
 function ItemsList() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
-    <div style={{overflow: 'scroll hidden', marginLeft: '120px', marginTop: '68px', msOverflowStyle: 'none', scrollbarWidth: 'none'}}>
+    <div
+      style={{
+        overflow: 'scroll hidden',
+        marginLeft: matches ? '24px' : '120px',
+        marginTop: '68px',
+        msOverflowStyle: 'none',
+        scrollbarWidth: 'none'
+      }}
+    >
       <Stack direction="row" spacing={2}>
         {products.map(product => {
           return (

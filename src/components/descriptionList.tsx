@@ -1,17 +1,22 @@
+import { Button, Typography, Stack, useMediaQuery } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
+import { useTheme } from '@mui/material/styles';
 import ItemsList from './itemsList';
-import { Button, Typography, Stack } from '@mui/material';
 
 function DescriptionList() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
-    <Grid xs={12} md={6} style={{height: '100vh'}}>
+    <Grid xs={12} md={6} style={{maxHeight: '100vh', marginTop: matches ? '-268px' : ''}}>
       <Stack
         direction="column"
         spacing={2}
         sx={{
           alignItems: 'flex-start',
           justifyContent: 'center',
-          ml: '120px'
+          m: matches ? 'auto' : '',
+          ml: matches ? '' : '120px'
         }}
       >
         <Typography
@@ -20,7 +25,8 @@ function DescriptionList() {
           sx={{
             width: '494px',
             height: '123px',
-            mt: '96px',
+            m: matches ? 'auto' : '',
+            mt: matches ? '0' : '96px',
             fontWeight: 700,
             fontFamily: 'ITC Avant Garde Pro Md',
             fontStyle: 'normal',
@@ -28,7 +34,7 @@ function DescriptionList() {
             lineHeight: '130%',
             display: 'flex',
             alignItems: 'flex-end',
-            color: '#000000'
+            color: matches ? '#FFF' :'#000'
           }}
         >
           Everyday items, we have something to suit every occasion.
@@ -37,13 +43,14 @@ function DescriptionList() {
           variant="body2"
           component="span" 
           sx={{
+            display: matches ? 'none' : 'block',
             width: '432px',
             height: '52px',
             fontStyle: 'normal',
             fontWeight: 400,
             fontSize: '16px',
             lineHeight: '160%',
-            color: '#666666',
+            color: '#666',
             fontFamily: 'Avenir',
             mt: '12px !important'
           }}
@@ -56,8 +63,10 @@ function DescriptionList() {
           sx={{
             alignItems: 'flex-start',
             justifyContent: 'center',
+            maxHeight: '23px',
+            width: '100%',
+            ml: matches ? '24px !important' : '',
             mt: '32px !important',
-            maxHeight: '23px'
           }}
         >
           <Button
@@ -75,7 +84,7 @@ function DescriptionList() {
               alignItems: 'center',
               justifyContent: 'flex-start',
               textTransform: 'capitalize',
-              color: '#000000',
+              color: matches ? '#FFF' :'#000',
               flex: 'none',
               order: '0',
               flexGrow: '0'
@@ -90,7 +99,7 @@ function DescriptionList() {
               mt: '8px !important',
               width: '156px',
               height: '1px',
-              background: '#000000',
+              background: matches ? '#FFF' :'#000',
               flex: 'none',
               order: 1,
               alignSelf: 'stretch',

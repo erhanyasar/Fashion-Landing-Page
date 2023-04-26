@@ -1,25 +1,15 @@
 import Grid from '@mui/material/Unstable_Grid2';
-
-const styledGrid =`
-  @media screen and (max-width: 600px) {
-    MuiGrid2-root {
-      width: 100%;
-      minHeight: '437px'
-    }
-  }
-  @media screen and (min-width: 600px) {
-    MuiGrid2-root {
-      width: 50%;
-      minHeight: '100%'
-    }
-  }`
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function HeroImage() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Grid
       xs={12}
       md={6}
-      className={styledGrid}
       style={{
         backgroundImage: 'url("./img/bg.png")',
         backgroundSize: 'cover',
