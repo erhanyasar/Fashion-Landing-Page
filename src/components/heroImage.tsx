@@ -5,13 +5,14 @@ const styledGrid =`
     MuiGrid2-root {
       width: 100%;
       minHeight: '437px'
+    }
   }
   @media screen and (min-width: 600px) {
     MuiGrid2-root {
       width: 50%;
       minHeight: '100%'
-  }
-}`
+    }
+  }`
 
 function HeroImage() {
   return (
