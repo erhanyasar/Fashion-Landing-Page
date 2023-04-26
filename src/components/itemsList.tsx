@@ -10,7 +10,7 @@ const products = [
 
 function ItemsList() {
   return (
-    <div style={{overflow: 'scroll hidden', marginLeft: '120px', marginTop: '68px'}}>
+    <div style={{overflow: 'scroll hidden', marginLeft: '120px', marginTop: '68px', msOverflowStyle: 'none', scrollbarWidth: 'none'}}>
       <Stack direction="row" spacing={2}>
         {products.map(product => {
           return (
