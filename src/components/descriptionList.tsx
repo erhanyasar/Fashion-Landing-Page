@@ -8,7 +8,7 @@ function DescriptionList() {
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Grid xs={12} md={6} style={{maxHeight: '100vh', marginTop: matches ? '-268px' : ''}}>
+    <Grid xs={12} sm={6} style={{maxHeight: '100vh', marginTop: matches ? '-268px' : ''}}>
       <Stack
         direction="column"
         spacing={2}
