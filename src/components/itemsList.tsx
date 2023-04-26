@@ -1,6 +1,6 @@
 import ItemDetails from './itemDetails';
-import { Button, Typography, Stack } from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Stack } from '@mui/material';
+import ArrowIcon from './arrowIcon';
 
 const products = [
   { info: '365 Signature Hoodie', img:'./img/product-1.png' },
@@ -10,18 +10,14 @@ const products = [
 
 function ItemsList() {
   return (
-    <div style={{overflow: 'hidden'}}>
-      <Stack direction="column" spacing={2}>
-        <Button href="#text-buttons" sx={{minWidth: '146px', height: '17px', fontFamily: 'Avenir', fontStyle: 'normal', fontWeight: '900', fontSize: '12.8px', lineHeight: '17px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', textTransform: 'capitalize', color: '#000000', flex: 'none', order: '0', flexGrow: '0'}}>Shop all everyday items</Button>
-        <Typography variant="body2" component="span" sx={{width: '146px', height: '1px', background: '#000000', flex: 'none', order: 1, alignSelf: 'stretch', flexGrow: 0}}></Typography>
-      </Stack>
+    <div style={{overflow: 'scroll hidden', marginLeft: '120px', marginTop: '68px'}}>
       <Stack direction="row" spacing={2}>
         {products.map(product => {
           return (
             <ItemDetails key={product.img} product={product} />
           )
         })}
-        <ArrowForwardIosIcon />
+        <ArrowIcon />
       </Stack>
     </div>
   );
