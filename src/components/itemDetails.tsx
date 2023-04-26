@@ -9,9 +9,9 @@ function ItemDetails(props: any) {
   return (
     <Stack direction="column" spacing={2}>
         <img src={props.product.img} alt={props.product.info} width='230px' height='310px' />
-        <Typography>{props.product.info}</Typography>
+        <Typography sx={{fontFamily: 'Avenir'}}>{props.product.info}</Typography>
         <Stack direction="row" spacing={2} sx={{justifyContent: 'space-between'}}>
-          <Typography>€33.95</Typography>
+          <Typography sx={{fontFamily: 'Avenir'}}>€33.95</Typography>
             <CirclePicker 
               width={'90px'}
               circleSize={10}
