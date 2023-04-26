@@ -16,7 +16,7 @@ function App() {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1, width: '100vw', height: '100vh', overflow: 'hidden scroll' }}>
-            <Grid container spacing={2} sx={{m: 0}}>
+            <Grid container spacing={2} sx={{m: 0, height: '100%'}}>
               <HeroImage />
               <DescriptionList />
             </Grid>
